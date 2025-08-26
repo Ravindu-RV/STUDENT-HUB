@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Hub </title>
+  <meta name="description" content="A simple open-source student website template (HTML, CSS, JS) — copy, edit, and host on Glitch or any static host." />
+  <style>
+    /* ===== Simple responsive CSS - easy to edit ===== */
+    :root{
+      --bg:#F3E7FE; --card:#fff; --text:#0b1220; --muted:#556; --accent:#4f46e5;
+      --radius:12px; --gap:18px; --maxw:1000px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; color:var(--text);background:var(--bg);}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--accent), black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size:30px;
+}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{padding:8px 12px;border-radius:20px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a:hover{background:rgba(0,0,0,0.04)}
+
+    .hero{display:flex;flex-wrap:wrap;gap:18px;background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.45));padding:18px;border-radius:var(--radius);align-items:center}
+    .hero .left{flex:1;min-width:220px}
+    .hero h1{margin:0 0 8px;font-size:28px}
+    .hero p{margin:0;color:var(--muted)}
+    .actions{margin-top:12px;display:flex;gap:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:20px;background:var(--accent);color:white;text-decoration:none;font-weight:700}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(79,70,229,12)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .card h3{margin:0 0 8px}
+    .resources li{margin:6px 0}
+
+    footer{margin-top:22px;padding:12px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){header{flex-direction:column;align-items:stretch}.grid{grid-template-columns:1fr}.hero{flex-direction:column}}
+
+    /* Small utility classes */
+    .center{display:flex;align-items:center;justify-content:center}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf6}
+    .tiny{font-size:12px;color:var(--muted)}
+    
+
+
+
+    #backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+#backToTop:hover {
+  background: #4338ca;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SH</div>
+        <div>
+          <div style="font-weight:1000; font-size:30px ">Student Hub</div>
+          <div class="tiny">Open-source starter (HTML • CSS • JS)</div>
+          <div class="tiny">ICT With Ravindu</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#resources">Resources</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="themeBtn" class="btn secondary"> Theme</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="left">
+        <h1>Build your student website — fast & free</h1>
+        <p>Use this simple open-source template to showcase projects, keep resources, collect notes, and learn web deployment.</p>
+        <div class="actions">
+          <a class="btn" href="https://stackblitz.com/">+ New Project</a>
+          <a class="btn secondary" href="https://vitejsviterlke1z6l-h53p--5173--96435430.local-credentialless.webcontainer.io">AI Platform</a>
+        </div>
+      </div>
+      <div style="min-width:220px;flex:0 0 260px">
+        <div class="card">
+          <h3>Quick start</h3>
+          <ol style="margin:8px 0;padding-left:18px">
+            <li>Copy this file into a new Glitch or repo.</li>
+            <li>Edit your name, projects and links.</li>
+            <li>Publish — share with classmates!</li>
+          </ol>
+          <div class="tiny">Tip: press Ctrl+F and replace placeholder text.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="grid">
+      <div class="card">
+        <h3>About</h3>
+        <p class="tiny">A simple landing page for students to list projects, resources, and contact info. Designed to be small and easy to modify.</p>
+      </div>
+      <div class="card">
+        <h3>Projects</h3>
+        <p class="tiny">Show project tiles, links to GitHub, live demos and short descriptions.</p>
+      </div>
+      <div class="card">
+        <h3>Resources</h3>
+        <p class="tiny">Store links to lecture notes, cheat sheets, and tutorials.</p>
+      </div>
+
+      <div class="card" style="grid-column: span 2">
+        <h3 id="projects">Student Projects</h3>
+        <div id="projectList" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+          <!-- Project items are injected by JS -->
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 id="resources">Helpful Links</h3>
+        <ul class="resources">
+          <li><a href="#">HTML tutorial — MDN</a></li>
+          <li><a href="#">CSS basics — MDN</a></li>
+          <li><a href="#">JavaScript guide — MDN</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" id="contact" style="margin-top:18px">
+      <h3>Contact</h3>
+      <p class="tiny">Leave a short message — this form uses client-side demo only.</p>
+      <form id="contactForm">
+        <div style="display:grid;gap:8px">
+          <input id="name" placeholder="Your name" />
+          <input id="email" placeholder="Your email" />
+          <textarea id="message" rows="4" placeholder="Message"></textarea>
+          <div style="display:flex;gap:8px;justify-content:flex-end">
+            <button type="submit" class="btn">Send</button>
+            <button id="clearBtn" type="button" class="btn secondary">Clear</button>
+          </div>
+        </div>
+      </form>
+      <div id="formResult" class="tiny" style="margin-top:8px"></div>
+      <button id="backToTop">⬆</button>
+
+    </section>
+
+    <footer>
+      © Student Hub • Open-source template • Made for learning
+    </footer>
+  </div>
+
+  <script>
+    // ===== Basic interactive JS (editable) =====
+    const projects = [
+      {title:'Calculator App', desc:'A simple JS calculator', link:'https://rvcalculatorappexe-tl3x--5173--96435430.local-credentialless.webcontainer.io'},
+      {title:'Portfolio', desc:'My class projects and notes', link:'https://stackblitz.com/edit/vitejs-vite-6nwkyktq?embed=1&file=index.html&hideExplorer=1&hideNavigation=1&view=preview'},
+      {title:'ToDo List', desc:'Practice with localStorage', link:'https://vitejsvitebjll1idp-miku--5173--96435430.local-credentialless.webcontainer.io'},
+      {title:'Weather App', desc:'API practice project', link:'https://vitejsvitedodbptle-mwlp--5173--96435430.local-credentialless.webcontainer.io'}
+    ];
+
+    const projectList = document.getElementById('projectList');
+    projects.forEach(p=>{
+      const el = document.createElement('div');
+      el.innerHTML = `<div style="padding:10px;border-radius:8px;background:linear-gradient(180deg,rgba(79,70,229,0.06),rgba(6,182,212,0.02))"><strong>${p.title}</strong><div class='tiny'>${p.desc}</div><div style='margin-top:8px'><a href='${p.link}' class='tiny'>View</a></div></div>`;
+      projectList.appendChild(el);
+    });
+
+    // theme toggle (simple)
+    const themeBtn = document.getElementById('themeBtn');
+    let dark = false;
+    themeBtn.addEventListener('click', ()=>{
+      dark = !dark;
+      if(dark){
+        document.documentElement.style.setProperty('--bg','#0b1220');
+        document.documentElement.style.setProperty('--card','#09101a');
+        document.documentElement.style.setProperty('--text','#e6eef8');
+        document.documentElement.style.setProperty('--muted','#9aa6bf');
+        document.documentElement.style.setProperty('--accent','#0ea5a4');
+      } else {
+        document.documentElement.style.setProperty('--bg','#f6f8fb');
+        document.documentElement.style.setProperty('--card','#fff');
+        document.documentElement.style.setProperty('--text','#0b1220');
+        document.documentElement.style.setProperty('--muted','#556');
+        document.documentElement.style.setProperty('--accent','#4f46e5');
+      }
+    });
+
+    // contact form (demo only)
+    document.getElementById('contactForm').addEventListener('submit', e=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const result = document.getElementById('formResult');
+      if(!name || !email || !msg){ result.textContent = 'Please fill all fields.'; return; }
+      // Demo: show the message (in real site, send to server or use serverless form)
+      result.textContent = `Thanks ${name}! Your message was saved locally.`;
+      // Save to localStorage (simple demo)
+      const store = JSON.parse(localStorage.getItem('studentHubMessages')||'[]');
+      store.push({name,email,msg,ts:Date.now()});
+      localStorage.setItem('studentHubMessages', JSON.stringify(store));
+      document.getElementById('contactForm').reset();
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', ()=>{
+      document.getElementById('contactForm').reset();
+      document.getElementById('formResult').textContent = '';
+    });
+
+  const backToTop = document.getElementById("backToTop");
+
+  // Show button when scrolled down 200px
+  window.onscroll = () => {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  };
+
+  // Scroll smoothly to top when clicked
+  backToTop.onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+
+  </script>
+</body>
+</html>
