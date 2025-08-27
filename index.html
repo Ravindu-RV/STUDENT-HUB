@@ -117,11 +117,34 @@
           <div class="tiny">Open-source starter (HTML • CSS • JS)</div>
           <div class="tiny">ICT With Ravindu</div>
         </div>
+        <!-- Registration Modal -->
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeRegister">&times;</span>
+    <h3>Register</h3>
+    <input id="regUsername" placeholder="Username" />
+    <input id="regEmail" placeholder="Email" />
+    <input id="regPassword" type="password" placeholder="Password" />
+    <input id="regProfilePic" type="file" accept="image/*" />
+    <button id="registerSubmit" class="btn">Register</button>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeLogin">&times;</span>
+    <h3>Login</h3>
+    <input id="loginEmail" placeholder="Email" />
+    <input id="loginPassword" type="password" placeholder="Password" />
+    <button id="loginSubmit" class="btn">Login</button>
+  </div>
+</div>
+
       </div>
      <nav>
   <a href="#">Home</a>
-  <a href="#features">Features</a>
-  <a href="#resources">Resources</a>
+ 
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
   <button id="themeBtn" class="btn secondary">Theme</button>
